@@ -1,27 +1,204 @@
-# Исправление стилистических ошибок в приложении "Hello, world!"
+# Исправление стилистических ошибок
 
-Задача начального уровня для практики навыка управления задачами в AutoCode. Переводы: [Английский](README.md).
+Задача начального уровня для практики навыка поиска и исправления стилистических ошибок, обнаруженных инструментами анализа кода.
+
+Переводы: [Английский](README.md).
+
+Время на выполнение задания - 1h.
+
+Для сборки проектов требуется установленный .NET 6 SDK.
 
 
-## Заберите проект
+## Описание задания
 
-* [Откройте проект в Visual Studio из внешнего Git-репозитория](https://docs.microsoft.com/ru-ru/visualstudio/get-started/tutorial-open-project-from-repo) или [склонируйте внешний Git-репозиторий на Ваш локальный диск](https://docs.microsoft.com/ru-ru/azure/devops/repos/git/clone#clone-from-another-git-provider) при помощи Visual Studio.
+## Замечания StyleCop
+
+[StyleCop Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) is a code analysis tool used to detect code style issues. StyleCop has a [settings file](code-analysis.ruleset) with a list of enabled rules and it raises an error or a warning in case a rule is violated. For rules documentation and reasoning on the rules themselves, see the [Documentation section](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md).
 
 
-## Завершите задачу
+### SA1001
 
-1. [Соберите решение](https://docs.microsoft.com/ru-ru/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio).
-    * Выберите элемент меню - _Build\Build Solution_.
-    * Или используйте сочетание клавиш - _Ctrl+Shift+B_.
-1. Откройте список ошибкок во вкладке [Error List](https://docs.microsoft.com/ru-ru/visualstudio/ide/find-and-fix-code-errors#review-the-error-list).
-    * Выберите элемент меню - _View\Error List_.
-    * Или используйте сочетание клавиш - _Ctrl+W, E_.
-1. Используйте двойной щелчок мыши на тексте предупреждения компилятора во вкладке Error List. Visual Studio откроет файл [HelloWorld.cs](HelloWorldStyle/HelloWorld.cs) в окне редактирования.
-1. Снова откройте вкладку Error List, используйте одинарный щелчок мыши на ссылке в поле "Code" любого элемента списка в поле. Visual Studio откроет страницу документации для выбранного предупреждения.
-1. Откройте файл [HelloWorld.cs](HelloWorldStyle/HelloWorld.cs) и отформатируйте код в окне редактора.
-    * Используйте сочетание клавиш - _Ctrl+K, Ctrl+D_.
-1. Соберите решение, откройте вкладку Error List и сравните список предупреждений компилятора с списком, который был до этого.
-1. Исправьте все предупреждения компилятора в файле [HelloWorld.cs](HelloWorldStyle/HelloWorld.cs).
+1. [Build the solution](https://docs.microsoft.com/en-us/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio).
+    * Click on the menu item - _Build\Build Solution_.
+    * Or use the default keyboard shortcut - _Ctrl+Shift+B_ (various versions of Visual Studio may have different keyboard shortcuts. See [Keyboard shortcuts in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio) article).
+
+![Build Solution](images/build-solution.png)
+
+2. Open the [Error List](https://docs.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors#review-the-error-list) view.
+    * Click on the menu item - _View\Error List_.
+    * Or use default shortcut - _Ctrl+\\, E_.
+
+![View Error List](images/view-error-list.png)
+
+3. Find an error with SA1001 code and review the error in detail by clicking on the link the "Code" column.
+
+![Open SA1001](images/open-sa1001.png)
+
+You will get to the issue documentation page.
+
+4. Double-click on the SA1001 issue in the Error List view. 
+
+![Navigate to SA1001](images/navigate-to-sa1001.png)
+
+You will get to [SA1001/Math.cs](StyleIssues/SA1001/Math.cs) file.
+
+![SA1001](images/sa1001.png)
+
+5. Read the documentation page and learn [how to fix the error](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1001.md#how-to-fix-violations): "To fix a violation of this rule, ensure that the comma is followed by a single space, and is not preceded by any space."
+
+6. Remove a space before a comma in the method parameter list. 
+
+```cs
+public static int Sum(int x,int y)
+```
+
+7. Add a space after the comma.
+
+```cs
+public static int Sum(int x, int y)
+```
+
+8. Rebuild the solution.
+
+![Rebuild Solution](images/rebuild-solution.png)
+
+9. Open the _Error List_ view again and make sure there are no SA1001 issues.
+
+
+### SA1002
+
+![SA1002](images/sa1002.png)
+
+1. Open _Error List_ view, find SA1002 issue.
+1. Open and read the issue documentation page.
+1. Navigate to the code by clicking on the issue line in _Error List_ view.
+1. Remove a space before a semicolon.
+1. Rebuild the solution.
+1. Open the _Error List_ view again and make sure there are no SA1002 issues anymore.
+
+
+### SA1005
+
+![SA1005](images/sa1005.png)
+
+Fix the issue by removing the incorrect code line and uncommenting the commented code.
+
+
+### SA1008
+
+![SA1008](images/sa1008.png)
+
+Fix the issue by removing a space before and after opening parenthesis.
+
+
+### SA1025
+
+![SA1025](images/sa1025.png)
+
+Fix the issue by removing redundant space characters.
+
+
+### SA1028
+
+![SA1028](images/sa1028.png)
+
+Fix the issue by removing unnecessary space characters in the end of the lines.
+
+
+### SA1500
+
+![SA1500](images/sa1500.png)
+
+Fix the issue by putting opening and closing curly brackets on new lines.
+
+
+### SA1505
+
+![SA1505](images/sa1505.png)
+
+Fix the issue by removing an empty line after an opening curly bracket.
+
+
+### SA1507
+
+![SA1507](images/sa1507.png)
+
+Fix the issue by removing a redundant empty line.
+
+
+### SA1508
+
+![SA1508](images/sa1508.png)
+
+Fix the issue by removing empty lines before the closing curly brackets.
+
+You can go to AutoCode portal, open the task page, and click on the "Check task" button.
+
+
+## Roslyn Analyzers
+
+[.NET compiler platform analyzers](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview) inspect your C# code for code quality and style issues. Starting with .NET 5, these analyzers are included with the .NET SDK. If your project targets .NET 5 or later, code analysis is enabled by default.
+
+
+### CA1304
+
+![CA1304](images/ca1304.png)
+
+Fix the issue by adding an _InvariantCulture_ parameter to the _ToUpper_ method call.
+
+```cs
+public static string MyMethod(string str)
+{
+    return "K-" + str.ToUpper(CultureInfo.InvariantCulture);
+}
+```
+
+
+### CA1305
+
+![CA1305](images/ca1305.png)
+
+Fix the issue by adding an _InvariantCulture_ parameter to the _ToUpper_ method call.
+
+```cs
+public static string MyMethod(int i)
+{
+    return "X" + i.ToString(CultureInfo.InvariantCulture);
+}
+```
+
+
+### CA1507
+
+![CA1507](images/ca1507.png)
+
+Fix the issue by using a [nameof expression](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/nameof) as an exception constructor parameter.
+
+```cs
+public static string MyMethod(string str)
+{
+    if (str == null)
+    {
+        throw new ArgumentNullException(nameof(str));
+    }
+
+    return "test" + str;
+}
+```
+
+
+### CA1707 & SA1300
+
+![CA1707](images/ca1707.png)
+
+Fix the issue by removing an underscore from the method name. Use [standard C# capitalization conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions): _Pascal Casing_ for method names and _Camel Casing_ for parameter names.
+
+```cs
+public static string MyMethod(string myStr)
+{
+    return myStr;
+}
+```
 
 
 ## Исправьте ошибки компилятора
@@ -33,22 +210,47 @@
 Также вы можете использовать [базу знаний правил Sonar](https://rules.sonarsource.com/csharp) для поиска дополнительной информации об ошибках, которые возникают на этапе проверки задания анализатором Sonar.
 
 
-## Сохраните изменения
+## Исправьте замечания компилятора
 
-* [Пересоберите решение](https://docs.microsoft.com/ru-ru/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) в Visual Studio.
-* Откройте [окно Error List](https://docs.microsoft.com/ru-ru/visualstudio/ide/reference/error-list-window) и проверьте, что в окне нет ошибок и предупреждений компилятора. Если в окне есть ошибки или предупреждения, **исправьте их** и снова пересоберите решение.
-* [Запустите юнит-тесты при помощи Test Explorer](https://docs.microsoft.com/ru-ru/visualstudio/test/run-unit-tests-with-test-explorer). Убедитесь, что все юнит тесты завершаются успешно. [Сделайте все юнит-тесты зелеными](https://stackoverflow.com/questions/276813/what-is-red-green-testing).
-* Обязятельно просмотрите все ваши изменения **перед тем** как сохранить Ваши изменения.
-    * Откройте вкладку "Changes" в окне [Team Explorer](https://docs.microsoft.com/ru-ru/visualstudio/ide/reference/team-explorer-reference).
-    * Правой клавишей мыши нажмите на измененном файле.
-    * Нажмите на пункте меню "Compare with Unmodified" чтобы открыть окно сравнения.
-* [Зафиксируйте изменения](https://docs.microsoft.com/ru-ru/azure/devops/repos/git/commits#stage-your-changes) и [создайте коммит](https://docs.microsoft.com/ru-ru/azure/devops/repos/git/commits#create-a-commit).
-* [Отправьте изменения во внешний репозиторий](https://docs.microsoft.com/ru-ru/azure/devops/repos/git/pushing).
+Для проектов в этом задании включены дополнительные проверки стиля и качества кода. Эти проверки помогут вам поддерживать целостность исходного кода и избежать тривиальных ошибок. Чтобы увидеть все ошибки и предупреждения компилятора, откройте закладку [Error List](https://docs.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors#review-the-error-list).
+
+Если сообщения компилятора недостаточно понятны, то [откройте подробности о сообщении](https://docs.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors#review-errors-in-detail) или погуглите код ошибки или предупреждения, чтобы получить больше информации о сообщении.
+
+
+## Чеклист задания
+
+1. Соберите решение.
+2. Исправьте все ошибки и предупреждения компилятора. Убедитесь, что в окне _Error List_ нет ошибко и предупреждений компилятора.
+
+![Output and Error List](images/rebuild-solution-output-error-list.png)
+
+3. Запустите все юнит тесты. Убедитесь, что все юнит тесты пройдены успешно.
+
+![Test Explorer](images/test-explorer.png)
+
+4. Просмотрите все изменения. Убедитесь, что изменения сделаны только в файлах с кодом (.cs), которые находятся в проекте StyleIssues.
+
+![Good Git Changes](images/git-changes-good.png)
+
+Изменений в файлах проекта (.csproj) и в файлах с кодов в проекте StyleIssues.Tests быть не должно.
+
+![Bad Git Changes](images/git-changes-bad.png)
+
+5. Зафиксируйте изменения.
+
+![Stage Changes](images/git-changes-stage.png)
+
+Все ваши изменения зафиксированы.
+
+![Staged Changes](images/git-changes-staged-changes.png)
+
+6. Создайте коммит и поместите ваши изменения в удаленный репозиторий.
+
+![Commit and Push](images/git-changes-commit-push.png)
 
 
 ## Дополнительная информация
 
 * Visual Studio
   * [Getting Started with Visual Studio 2019](https://www.youtube.com/watch?v=1CgsMtUmVgs)
-  * [Git Fundamentals](https://www.youtube.com/watch?v=c3482qAzZLQ)
   * [Default keyboard shortcuts in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)
