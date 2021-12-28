@@ -13,7 +13,7 @@
 
 ## Замечания StyleCop
 
-[StyleCop Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) is a code analysis tool used to detect code style issues. StyleCop has a [settings file](code-analysis.ruleset) with a list of enabled rules and it raises an error or a warning in case a rule is violated. For rules documentation and reasoning on the rules themselves, see the [Documentation section](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md).
+[Анализаторы StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) это инструмент статического анализа кода, который используется для поиска в коде стилистических ошибок. У StyleCop есть [файл настроек](code-analysis.ruleset), в котором находится список включенных правил, и инструмент генерирует ошибку или предупреждение, если правило нарушается. Документацию правил и разъяснение условий применения правил можно найти в [разделе документации StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md).
 
 
 ### SA1001
