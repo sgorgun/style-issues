@@ -72,7 +72,7 @@ public static int Sum(int x, int y)
 1. Open the _Error List_ view, find the SA1002 issue.
 1. Open and read the issue documentation page.
 1. Navigate to the code by clicking on the issue line in _Error List_ view.
-1. Remove the space before the semicolon.
+1. Remove the whitespace before the semicolon.
 1. Rebuild the solution.
 1. Open the _Error List_ view again and make sure there are no SA1002 issues anymore.
 
