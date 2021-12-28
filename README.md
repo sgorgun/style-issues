@@ -26,11 +26,11 @@ The task requires .NET 6 SDK.
 
 2. Open the [Error List](https://docs.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors#review-the-error-list) view.
     * Click on the menu item - _View\Error List_.
-    * Or use default shortcut - _Ctrl+\\, E_.
+    * Or use the default shortcut - _Ctrl+\\, E_.
 
 ![View Error List](images/view-error-list.png)
 
-3. Find an error with SA1001 code and review the error in detail by clicking on the link the "Code" column.
+3. Find an error with SA1001 code and review the error in detail by clicking on the link in the "Code" column.
 
 ![Open SA1001](images/open-sa1001.png)
 
@@ -40,19 +40,19 @@ You will get to the issue documentation page.
 
 ![Navigate to SA1001](images/navigate-to-sa1001.png)
 
-You will get to [SA1001/Math.cs](StyleIssues/SA1001/Math.cs) file.
+You will get to the [SA1001/Math.cs](StyleIssues/SA1001/Math.cs) file.
 
 ![SA1001](images/sa1001.png)
 
 5. Read the documentation page and learn [how to fix the error](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1001.md#how-to-fix-violations): "To fix a violation of this rule, ensure that the comma is followed by a single space, and is not preceded by any space."
 
-6. Remove a space before a comma in the method parameter list. 
+6. Remove a whitespace before a comma in the method parameter list. 
 
 ```cs
 public static int Sum(int x,int y)
 ```
 
-7. Add a space after the comma.
+7. Add a whitespace after the comma.
 
 ```cs
 public static int Sum(int x, int y)
@@ -69,10 +69,10 @@ public static int Sum(int x, int y)
 
 ![SA1002](images/sa1002.png)
 
-1. Open _Error List_ view, find SA1002 issue.
+1. Open the _Error List_ view, find the SA1002 issue.
 1. Open and read the issue documentation page.
 1. Navigate to the code by clicking on the issue line in _Error List_ view.
-1. Remove a space before a semicolon.
+1. Remove the space before the semicolon.
 1. Rebuild the solution.
 1. Open the _Error List_ view again and make sure there are no SA1002 issues anymore.
 
@@ -88,21 +88,21 @@ Fix the issue by removing the incorrect code line and uncommenting the commented
 
 ![SA1008](images/sa1008.png)
 
-Fix the issue by removing a space before and after opening parenthesis.
+Fix the issue by removing the whitespace before and after opening parenthesis.
 
 
 ### SA1025
 
 ![SA1025](images/sa1025.png)
 
-Fix the issue by removing redundant space characters.
+Fix the issue by removing redundant whitespace characters.
 
 
 ### SA1028
 
 ![SA1028](images/sa1028.png)
 
-Fix the issue by removing unnecessary space characters in the end of the lines.
+Fix the issue by removing unnecessary whitespace characters at the end of the lines.
 
 
 ### SA1500
@@ -116,23 +116,23 @@ Fix the issue by putting opening and closing curly brackets on new lines.
 
 ![SA1505](images/sa1505.png)
 
-Fix the issue by removing an empty line after an opening curly bracket.
+Fix the issue by removing the empty line after the opening curly bracket.
 
 
 ### SA1507
 
 ![SA1507](images/sa1507.png)
 
-Fix the issue by removing a redundant empty line.
+Fix the issue by removing the redundant empty line.
 
 
 ### SA1508
 
 ![SA1508](images/sa1508.png)
 
-Fix the issue by removing empty lines before the closing curly brackets.
+Fix the issue by removing the empty lines before the closing curly brackets.
 
-You can go to AutoCode portal, open the task page, and click on the "Check task" button.
+You can go to the AutoCode portal, open the task page, and click on the "Check task" button.
 
 
 ## Roslyn Analyzers
@@ -172,7 +172,7 @@ public static string MyMethod(int i)
 
 ![CA1507](images/ca1507.png)
 
-Fix the issue by using a [nameof expression](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/nameof) as an exception constructor parameter.
+Fix the issue by using the [nameof expression](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/nameof) as an exception constructor parameter.
 
 ```cs
 public static string MyMethod(string str)
@@ -191,7 +191,7 @@ public static string MyMethod(string str)
 
 ![CA1707](images/ca1707.png)
 
-Fix the issue by removing an underscore from the method name. Use [standard C# capitalization conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions): _Pascal Casing_ for method names and _Camel Casing_ for parameter names.
+Fix the issue by removing the underscore from the method name. Use the [standard C# capitalization conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions): _Pascal Casing_ for method names and _Camel Casing_ for parameter names.
 
 ```cs
 public static string MyMethod(string myStr)
@@ -221,11 +221,11 @@ Also, you can use [Sonar rule knowledge database](https://rules.sonarsource.com/
 
 ![Test Explorer](images/test-explorer.png)
 
-4. Review all changes, make sure the only code files (.cs) in StyleIssues project have changes.
+4. Review all changes, make sure that only the code files (.cs) in StyleIssues project are changed.
 
 ![Good Git Changes](images/git-changes-good.png)
 
-No changes in project files (.csproj) or in code files in StyleIssues.Tests project.
+Do not make any changes to project files (.csproj) or in code files in StyleIssues.Tests project.
 
 ![Bad Git Changes](images/git-changes-bad.png)
 
