@@ -6,17 +6,17 @@ Translations: [Russian](README-RU.md).
 
 Estimated time to complete the task - 1h.
 
-The task requires .NET 6 SDK.
+The task requires .NET 6 SDK installed.
 
 
 ## Task Description
 
-## StyleCop Issues
+### StyleCop Issues
 
 [StyleCop Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) is a code analysis tool used to detect code style issues. StyleCop has a [settings file](code-analysis.ruleset) with a list of enabled rules and it raises an error or a warning in case a rule is violated. For rules documentation and reasoning on the rules themselves, see the [Documentation section](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md).
 
 
-### SA1001
+#### SA1001
 
 1. [Build the solution](https://docs.microsoft.com/en-us/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio).
     * Click on the menu item - _Build\Build Solution_.
@@ -36,7 +36,7 @@ The task requires .NET 6 SDK.
 
 You will get to the issue documentation page.
 
-4. Double-click on the SA1001 issue in the Error List view. 
+4. Double-click on the SA1001 issue in the _Error List_ view. 
 
 ![Navigate to SA1001](images/navigate-to-sa1001.png)
 
@@ -65,7 +65,7 @@ public static int Sum(int x, int y)
 9. Open the _Error List_ view again and make sure there are no SA1001 issues.
 
 
-### SA1002
+#### SA1002
 
 ![SA1002](images/sa1002.png)
 
@@ -77,56 +77,56 @@ public static int Sum(int x, int y)
 1. Open the _Error List_ view again and make sure there are no SA1002 issues anymore.
 
 
-### SA1005
+#### SA1005
 
 ![SA1005](images/sa1005.png)
 
 Fix the issue by removing the incorrect code line and uncommenting the commented code.
 
 
-### SA1008
+#### SA1008
 
 ![SA1008](images/sa1008.png)
 
 Fix the issue by removing the whitespace before and after opening parenthesis.
 
 
-### SA1025
+#### SA1025
 
 ![SA1025](images/sa1025.png)
 
 Fix the issue by removing redundant whitespace characters.
 
 
-### SA1028
+#### SA1028
 
 ![SA1028](images/sa1028.png)
 
 Fix the issue by removing unnecessary whitespace characters at the end of the lines.
 
 
-### SA1500
+#### SA1500
 
 ![SA1500](images/sa1500.png)
 
 Fix the issue by putting opening and closing curly brackets on new lines.
 
 
-### SA1505
+#### SA1505
 
 ![SA1505](images/sa1505.png)
 
 Fix the issue by removing the empty line after the opening curly bracket.
 
 
-### SA1507
+#### SA1507
 
 ![SA1507](images/sa1507.png)
 
 Fix the issue by removing the redundant empty line.
 
 
-### SA1508
+#### SA1508
 
 ![SA1508](images/sa1508.png)
 
@@ -135,12 +135,12 @@ Fix the issue by removing the empty lines before the closing curly brackets.
 You can go to the AutoCode portal, open the task page, and click on the "Check task" button.
 
 
-## Roslyn Analyzers
+### Roslyn Analyzers
 
 [.NET compiler platform analyzers](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview) inspect your C# code for code quality and style issues. Starting with .NET 5, these analyzers are included with the .NET SDK. If your project targets .NET 5 or later, code analysis is enabled by default.
 
 
-### CA1304
+#### CA1304
 
 ![CA1304](images/ca1304.png)
 
@@ -154,7 +154,7 @@ public static string MyMethod(string str)
 ```
 
 
-### CA1305
+#### CA1305
 
 ![CA1305](images/ca1305.png)
 
@@ -168,7 +168,7 @@ public static string MyMethod(int i)
 ```
 
 
-### CA1507
+#### CA1507
 
 ![CA1507](images/ca1507.png)
 
@@ -187,7 +187,7 @@ public static string MyMethod(string str)
 ```
 
 
-### CA1707 & SA1300
+#### CA1707 & SA1300
 
 ![CA1707](images/ca1707.png)
 
