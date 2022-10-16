@@ -6,7 +6,7 @@ namespace StyleIssues.CA1305
     {
         public static string MyMethod(int i)
         {
-            return "X" + i.ToString();
+            return "X" + i.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

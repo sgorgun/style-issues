@@ -2,9 +2,9 @@
 {
     public static class MyClass
     {
-        public static string my_method(string my_str)
+        public static string MyMethod(string myStr)
         {
-            return my_str;
+            return myStr;
         }
     }
 }

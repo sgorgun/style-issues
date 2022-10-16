@@ -6,7 +6,7 @@ namespace StyleIssues.CA1304
     {
         public static string MyMethod(string str)
         {
-            return "K-" + str.ToUpper();
+            return "K-" + str.ToUpper(CultureInfo.InvariantCulture);
         }
     }
 }
